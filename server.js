@@ -5,8 +5,8 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-
-var articleOne = {
+var articles ={
+ 'article-one' : {
     title: "Article One | SANJEEV",
     heading: "Article one",
     content : `
@@ -24,8 +24,44 @@ var articleOne = {
                     </p>
     
     `
- };
-
+ },
+ 
+ 'article-two' :{
+     title :'Article Two | Sanjeev',
+     heading: 'Article Two',
+     content: `
+            <p> This is article two written on how to create new HTML file in github</p>
+                <ul>
+                    <li>Login to github</li>
+                    <li>Navigate to your project folder</li>
+                    <li>Click on the UI folder in your project</li>
+                    <li>Click on the Create file button</li>
+                    <li>This will allow you to create a new file of type you want.(In this case we create html project)</li>
+                </ul>
+                
+            <p>In association with IMAD, Hasura.io </p>
+     `
+ },
+ 
+ 'article-three':{
+    title:'Article Three | SANJEEV',
+    heading:'Article Three',
+    content:`
+             <p>This Article three tells about how to edit your file in clould.imad.hasura.io</p>
+                <ul>
+                    <li>Login to your http://cloud.imad.hasura.io using your github id</li>
+                    <li>Click on the code console</li>
+                    <li>This will take you to code console page</li>
+                    <li>this conosle page shows File added on the project on the left pane</li>
+                    <li>You can restart your webserver by clickingon the Restart button on the left pane</li>
+                    <li>Click on the Go To app link to check/test your code </li>
+                </ul>
+            <p>In association with IMAD, Hasura.io</p>
+    
+    `
+ }
+ 
+}
 
 function createTemplate (data){
     var title= data.title;
@@ -63,9 +99,17 @@ app.get('/', function (req, res) {
    res.sendFile(path.join(__dirname, 'ui', 'article-one.html'));
 });*/
 
+/*
 app.get('/article-one', function (req, res) {
    res.send(createTemplate(articleOne));
-});
+});*/
+
+app.get('/:articleNames', function (req, res) {
+   
+   var article = req.params.articleName;
+   res.send(createTemplate(article[articleName]));
+}); 
+
 
 app.get('/article-two', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
