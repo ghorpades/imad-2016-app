@@ -46,3 +46,24 @@ click.onclick= function(){
     
 };
     
+    
+    //submit name 
+    var nameInput = document.getElementById("name");
+    var name = nameInput.value;
+    var submit = document.getElementById("submit_btn");
+    submit.onclick= function() {
+        
+        // should make a request to server and sent the name 
+        
+        //capture the list of names and render it as a list
+        var names=["ABCD", 'PQRS', "XYZ"];
+        var list="";
+       
+        for(var i =0; i<names.length;i++){
+            list += '<li>' + names[i]  + '</li>'
+        }
+        var ul = document.getElementById("nameList");
+        ul.innerHTML=list
+    };
+    
+    
