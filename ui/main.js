@@ -32,14 +32,13 @@ click.onclick= function(){
     request.onreadystatechange = function(){
         if(request.readySate === XMLHttpRequest.DONE){
             // Take some action 
-            if(requesst.status === 200){
+            if(request.status === 200){
                 var counter = request.responseText;
                  count.innerHTML=counter.toString();
             }
             
         }
     };
-    
     
     /*counter= counter+1;
     count.innerHTML=counter.toString();*/
