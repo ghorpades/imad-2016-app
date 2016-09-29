@@ -1,8 +1,6 @@
 console.log('Loaded!');
 
 
-//change the text of main div
-
 //move the image
 var img= document.getElementById("madi");
 
@@ -18,11 +16,8 @@ img.onclick= function(){
 }
  /*                                             BUTTON TO CHANGE REQUEST AND GET THE COUNTER                                                      */
 var count = document.getElementById("count");
-
 var click = document.getElementById("click");
-
 click.onclick= function(){
-    
      //create the request Object
     var request = new XMLHttpRequest();
     
@@ -54,16 +49,28 @@ click.onclick= function(){
     submit.onclick= function() {
         
         // should make a request to server and sent the name 
+        var request = new XMLHttpRequest();
         
+        request.onreadystatechange= function() {
+            if(request.readyState === XMLHttpRequest.DONE){
+                if(request.status === 200){
+                    var names=["ABCD", 'PQRS', "XYZ","MNC"];
+                    var list="";
+                   
+                    for(var i =0; i<names.length;i++){
+                        list += '<li>' + names[i]  + '</li>'
+                    }
+                    var ul = document.getElementById("nameList");
+                    ul.innerHTML=list;            
+                    
+                }
+                
+            }
+            
+        };
         //capture the list of names and render it as a list
-        var names=["ABCD", 'PQRS', "XYZ","MNC"];
-        var list="";
-       
-        for(var i =0; i<names.length;i++){
-            list += '<li>' + names[i]  + '</li>'
-        }
-        var ul = document.getElementById("nameList");
-        ul.innerHTML=list;
+        request.open('GET','http://http://ghorpades.imad.hasura-app.io/sybmit-name?name' + name, true);
+        request.send(null);
     };
     
     
