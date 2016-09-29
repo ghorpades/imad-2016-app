@@ -43,8 +43,7 @@ click.onclick= function(){
     
     
     //submit name 
-    var nameInput = document.getElementById("name");
-    var name = nameInput.value;
+   
     var submit = document.getElementById("submit_btn");
     submit.onclick= function() {
         
@@ -71,6 +70,8 @@ click.onclick= function(){
             
         };
         //capture the list of names and render it as a list
+         var nameInput = document.getElementById("name");
+          var name = nameInput.value;
         request.open('GET','http://ghorpades.imad.hasura-app.io/submit-name?name='+name, true);
         request.send(null);
     };
