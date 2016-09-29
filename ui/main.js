@@ -18,7 +18,6 @@ img.onclick= function(){
 }
  /*                                             BUTTON TO CHANGE REQUEST AND GET THE COUNTER                                                      */
 var count = document.getElementById("count");
-var counter=0;
 
 var click = document.getElementById("click");
 
