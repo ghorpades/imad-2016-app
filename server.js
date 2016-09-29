@@ -120,6 +120,7 @@ app.get('/ui/main.js', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'main.js'));
 });
 
+// The count function should be above the aricle function for the call in the server.js file or else i will invoke artilce function and give an create Templeate error
 var counter =0;
 app.get('/count', function (req,res){
    counter = counter+1;
