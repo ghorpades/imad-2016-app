@@ -69,7 +69,7 @@ click.onclick= function(){
             
         };
         //capture the list of names and render it as a list
-        request.open('GET','http://http://ghorpades.imad.hasura-app.io/submit-name?name='+name, true);
+        request.open('GET','http://ghorpades.imad.hasura-app.io/submit-name?name='+name, true);
         request.send(null);
     };
     
