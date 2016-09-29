@@ -20,5 +20,16 @@ function moveRight() {
 img.onclick= function(){
   //  img.style.marginLeft='100px';
     var interval = setInterval(moveRight,100);
-  
 }
+
+var count = document.getElementById("count");
+var counter=0;
+var click = document.getElementById("click");
+click.onclick= function(){
+    //make the request to endpiont
+    
+    // render the variable.
+    counter= counter+1;
+    count.innerHTML=counter.toString;
+}
+    
