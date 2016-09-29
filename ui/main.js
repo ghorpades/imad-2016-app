@@ -19,7 +19,7 @@ img.onclick= function(){
     var interval = setInterval(moveRight,100);
 }
 
-
+var count = document.getElementById("count");
 var counter=0;
 var click = document.getElementById("click");
 click.onclick= function(){
@@ -27,7 +27,7 @@ click.onclick= function(){
     
     // render the variable.
     counter= counter+1;
-    var count = document.getElementById("count");
+    
     count.innerHTML=counter.toString();
 }
     
