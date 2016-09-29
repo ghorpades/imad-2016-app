@@ -143,11 +143,12 @@ app.get('/ui/madi.png', function (req, res) {
 });
 
 var names =[];
-app.get('/submit-name/:name', function (req, res) {
+app.get('/submit-name/:name', function (req, res) { // jquery /submit?name=xxxx
   // get the names from the request
   
-  var name = req.params.name;
+ // var name = req.params.name;
   
+  var name = req.query.name;
   names.push(name);
   
   //json : java scirpt object notaation.. which converts objects to string
