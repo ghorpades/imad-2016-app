@@ -104,11 +104,6 @@ app.get('/article-one', function (req, res) {
    res.send(createTemplate(articleOne));
 });*/
 
-app.get('/:name', function (req, res) {
-   
-   var name = req.params.name;
-   res.send(createTemplate(articles[name]));
-}); 
 
 
 /*
@@ -130,6 +125,13 @@ app.get('/count', function (req,res){
    counter = counter+1;
    res.send(counter.toString());
 });
+
+app.get('/:name', function (req, res) {
+   
+   var name = req.params.name;
+   res.send(createTemplate(articles[name]));
+}); 
+
 
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
