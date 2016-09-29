@@ -45,7 +45,7 @@ click.onclick= function(){
     count.innerHTML=counter.toString();*/
     
     //Make the request
-    request.Open('GET','http://ghorpades.imad.hasura-app.io/count',true);
+    request.open('GET','http://ghorpades.imad.hasura-app.io/count',true);
     request.send(null);
     
 };
