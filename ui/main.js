@@ -56,14 +56,14 @@ click.onclick= function(){
         // should make a request to server and sent the name 
         
         //capture the list of names and render it as a list
-        var names=["ABCD", 'PQRS', "XYZ"];
+        var names=["ABCD", 'PQRS', "XYZ","MNC"];
         var list="";
        
         for(var i =0; i<names.length;i++){
             list += '<li>' + names[i]  + '</li>'
         }
         var ul = document.getElementById("nameList");
-        ul.innerHTML=list
+        ul.innerHTML=list;
     };
     
     
