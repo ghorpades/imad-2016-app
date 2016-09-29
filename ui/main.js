@@ -28,6 +28,6 @@ click.onclick= function(){
     // render the variable.
     counter= counter+1;
     var count = document.getElementById("count");
-    count.innerHTML=counter.toString;
+    count.innerHTML=counter.toString();
 }
     
